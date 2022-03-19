@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Laphatize/nudge/issues"
   },
-  "homepage": "https://github.com/Laphatize/nudge#readme"
+  "homepage": "https://github.com/Laphatize/nudge#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
