@@ -16,8 +16,8 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/src/index.html');
 });
 
-app.get('/dashboard', function(req, res){
-    res.sendFile(__dirname + '/src/dashboard.html');
+app.get('/analytics', function(req, res){
+    res.sendFile(__dirname + '/src/analytics.html');
 });
 
 // API ENDPOINTS 
