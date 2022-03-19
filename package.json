@@ -1,0 +1,20 @@
+{
+  "name": "nudge",
+  "version": "1.0.0",
+  "description": "\"FREAKIN WORK\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laphatize/nudge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laphatize/nudge/issues"
+  },
+  "homepage": "https://github.com/Laphatize/nudge#readme"
+}
