@@ -3,9 +3,10 @@ var express = require('express');
 var app = module.exports = express()
 var config = require("./config.json");
 const { Configuration, OpenAIApi } = require("openai");
+require('dotenv').config()
 
 const configuration = new Configuration({
-  apiKey: config.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 app.use(express.static("public"));
