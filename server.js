@@ -1,7 +1,6 @@
 
 var express = require('express');
 var app = module.exports = express()
-var config = require("./config.json");
 const { Configuration, OpenAIApi } = require("openai");
 require('dotenv').config()
 
