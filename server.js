@@ -3,6 +3,7 @@ var express = require('express');
 var app = module.exports = express()
 const { Configuration, OpenAIApi } = require("openai");
 require('dotenv').config()
+const cors = require("cors");
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -11,6 +12,7 @@ const openai = new OpenAIApi(configuration);
 app.use(express.static("public"));
 
 
+app.use("*", cors())
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/src/index.html');
