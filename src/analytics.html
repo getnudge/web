@@ -71,7 +71,7 @@
                 <p class="font-medium text-white">
                   <span class="text-2xl">    <i class="fas fa-circle-notch fa-spin"></i>
                     Syncing with extension... </span>
-                 
+                 <p class="text-white">If this doesn't go away. You probably don't have the extension installed correctly or you are using a developer version.</p>
                 </p>
               </div>
            
@@ -80,21 +80,41 @@
       
         <div class="py-10">
           <header>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h1 class="text-3xl font-bold leading-tight text-gray-900">Hello, <span id="username"></span></h1>
+            <div class="max-w-7xl text-center mx-auto">
+              <h1 class="text-3xl font-bold leading-tight text-gray-900 mb-4">Hello, <span id="username"></span>!</h1>
+  
+              <span class="bg-red-500 text-white px-4 py-1 rounded-lg text-2xl font-semibold leading-tight ">0 day streak </span>
+       
             </div>
+       
           </header>
           <main>
-            <div class="max-w-7xl  sm:px-6 lg:px-8">
+            <div class="mt-10 max-w-7xl  mx-auto sm:px-6 lg:px-8">
               
-              <div class="px-4 sm:px-0">
-                <div class="px-10   rounded-lg h-96">
-
-                    <div class="px-6 border border-gray-200  py-6 shadow-lg rounded-lg overflow-hidden w-2/3 mx-auto mt-5 text-center">
-                        <h1 class="font-semibold text-xl mb-5">😐 You can do better than that!</h1>
+              <div class="">
+                <div class="  rounded-lg h-96">
+                  <div class="mt-1 grid grid-cols-2 gap-4 ">
+                    <div class="py-4  px-2 border border-gray-200   shadow-lg rounded-lg overflow-hidden mx-auto mt-5 text-center w-full">
+                        <h1 class="font-semibold text-2xl mb-5">📈 Your Progress </h1>
                         <canvas id="chartBar"></canvas>
+                        
                       </div>
-                      
+
+                      <div class="py-4  px-2 border border-gray-200  py-6 shadow-lg rounded-lg overflow-hidden w-full mx-auto mt-5 text-center">
+                        <h1 class="font-semibold text-2xl mb-5">✨ Suggestions </h1>
+                        <div class="px-7">
+                        <div class="bg-gray-100 hover:bg-gray-200 py-4 px-6 rounded-lg">
+                            <h1>There are times when there are no activity while not in break. Try removing distractions from your area.</h1>
+                        </div>
+
+                        <div class="bg-gray-100 hover:bg-gray-200 py-4 px-6 rounded-lg mt-2">
+                          <h1>It looks like you keep taking breaks when you're not supposed to. Let's adjust your pomodoro timer to give you longer pre-determinded breaks.</h1>
+                      </div>
+
+                      <p class="mt-6 italic">That's all for now!</p>
+                    </div>
+                      </div>
+                    </div>
                       <!-- Required chart.js -->
                       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                       
@@ -114,9 +134,9 @@
                           datasets: [
                             {
                               label: "Times you went off task",
-                              backgroundColor: "hsl(252, 82.9%, 67.8%)",
-                              borderColor: "hsl(252, 82.9%, 67.8%)",
-                              data: [1, 2, 5, 2, 5, 4, 5],
+                              backgroundColor: "hsl(216, 100%, 50%)",
+                              borderColor: "hsl(216, 100%, 50%)",
+                              data: [1, 0, 0, 0, 0, 0, 0],
                             },
 
 
@@ -134,6 +154,7 @@
                           configBarChart
                         );
                       </script>
+                      
                 </div>
               </div>
               <!-- /End replace -->
