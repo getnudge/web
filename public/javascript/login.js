@@ -59,3 +59,12 @@ function loginGoogle() {
 });
 
 }
+
+
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    window.location.href = "./dashboard"
+  } else {
+  }
+});
