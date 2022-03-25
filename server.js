@@ -4,6 +4,7 @@ var app = module.exports = express()
 const { Configuration, OpenAIApi } = require("openai");
 require('dotenv').config()
 const cors = require("cors");
+const { response } = require('express');
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -18,37 +19,27 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/src/index.html');
 });
 
-app.get('/analytics', function(req, res){
+app.get('/dashboard', function(req, res){
     res.sendFile(__dirname + '/src/analytics.html');
 });
 
 // API ENDPOINTS 
 app.get('/api/analyze', async function(req, res){
 
+    console.log("hit")
     // wconsole.log(req.query.text)
     const datsa2 = await openai.createCompletion("text-davinci-002", {
-        prompt: `There keywords that describe "${req.query.text}" are:`,
+        prompt: `Create a 400 word summary for the article ${req.query.url} in your own words. After you have created the summary, please enter the summary below.`,
         temperature: 0.1,
-        max_tokens: 30,
+        max_tokens: 100,
         top_p: 1,
         frequency_penalty: 0.8,
         presence_penalty: 0,
     })
 
+    if (!datsa2.data.choices[0].text) return res.send("Error")
 
-    const datsa = await openai.createCompletion("text-davinci-002", {
-        prompt: `Are the words ${datsa2.data.choices[0].text} describing "${req.query.context}". Answer either true or false.`,
-        temperature: 0.3,
-        max_tokens: 60,
-        top_p: 1,
-        frequency_penalty: 0.8,
-        presence_penalty: 0,
-    })
-
-
-    console.log("AI SUMMARY:" + "\n" + datsa2.data.choices[0].text + "\n" + datsa.data.choices[0].text);
-    
-    res.send(datsa.data.choices[0].text.toLowerCase());
+    res.send(datsa2.data.choices[0].text);
   
 });
 

@@ -14,7 +14,7 @@ function loginGithub() {
     // The signed-in user info.
     var user = result.user;
 
-    window.location.href = "./analytics"
+    window.location.href = "./dashboard"
     // ...
   }).catch((error) => {
     // Handle Errors here.

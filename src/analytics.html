@@ -18,16 +18,12 @@
             <div class="flex justify-between h-16">
               <div class="flex">
                 <div class="flex-shrink-0 flex items-center">
-                    <h1 class="text-2xl">Nudge</h1>
+                    <h1 class="text-2xl">NudgeAI</h1>
                     
                 </div>
                 <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   <!-- Current: "border-blue-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-                  <a href="/analytics" class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm text-xl" aria-current="page"> Analytics </a>
-      
-                  <a href="/friends" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm text-xl"> Your Friends</a>
-      
-                  <a href="/settings" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm text-xl"> Extension Settings </a>
+                  <a  class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm text-xl" aria-current="page"> Article Generation </a>
       
                </div>
               </div>
@@ -65,25 +61,13 @@
       
          
         </nav>
-        <div id="loader" class="relative bg-blue-600">
-            <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-              <div class="pr-16 sm:text-center sm:px-16">
-                <p class="font-medium text-white">
-                  <span class="text-2xl">    <i class="fas fa-circle-notch fa-spin"></i>
-                    Syncing with extension... </span>
-                 <p class="text-white">If this doesn't go away. You probably don't have the extension installed correctly or you are using a developer version.</p>
-                </p>
-              </div>
-           
-            </div>
-          </div>
+  
       
         <div class="py-10">
           <header>
             <div class="max-w-7xl text-center mx-auto">
               <h1 class="text-3xl font-bold leading-tight text-gray-900 mb-4">Hello, <span id="username"></span>!</h1>
   
-              <span class="bg-red-500 text-white px-4 py-1 rounded-lg text-2xl font-semibold leading-tight ">0 day streak </span>
        
             </div>
        
@@ -95,66 +79,19 @@
                 <div class="  rounded-lg h-96">
                   <div class="mt-1 grid grid-cols-2 gap-4 ">
                     <div class="py-4  px-2 border border-gray-200   shadow-lg rounded-lg overflow-hidden mx-auto mt-5 text-center w-full">
-                        <h1 class="font-semibold text-2xl mb-5">📈 Your Progress </h1>
-                        <canvas id="chartBar"></canvas>
-                        
+                        <h1 class="font-semibold text-2xl mb-5">📥 Input </h1>
+                        <textarea id="input" style="width:100%;height:200px;" class="px-2 py-2 bg-gray-100 border-blue-500 border" ></textarea>
+                        <button  onclick="start()" class="bg-blue-500 text-white px-2 py-2 rounded-lg hover:bg-blue-400">Create Response</button>
                       </div>
 
                       <div class="py-4  px-2 border border-gray-200  py-6 shadow-lg rounded-lg overflow-hidden w-full mx-auto mt-5 text-center">
-                        <h1 class="font-semibold text-2xl mb-5">✨ Suggestions </h1>
+                        <h1 class="font-semibold text-2xl mb-5">✨ AI Generated Response </h1>
                         <div class="px-7">
-                        <div class="bg-gray-100 hover:bg-gray-200 py-4 px-6 rounded-lg">
-                            <h1>There are times when there are no activity while not in break. Try removing distractions from your area.</h1>
-                        </div>
-
-                        <div class="bg-gray-100 hover:bg-gray-200 py-4 px-6 rounded-lg mt-2">
-                          <h1>It looks like you keep taking breaks when you're not supposed to. Let's adjust your pomodoro timer to give you longer pre-determinded breaks.</h1>
-                      </div>
-
-                      <p class="mt-6 italic">That's all for now!</p>
+                      <p id="ai" class="mt-6 italic">Nothing generated yet.</p>
                     </div>
                       </div>
                     </div>
-                      <!-- Required chart.js -->
-                      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                      
-                      <!-- Chart bar -->
-                      <script>
-                        const labelsBarChart = [
-                          "Sunday",
-                          "Monday",
-                          "Tuesday",
-                          "Wednesday",
-                          "Thursday",
-                          "Friday",
-                          "Saturday"
-                        ];
-                        const dataBarChart = {
-                          labels: labelsBarChart,
-                          datasets: [
-                            {
-                              label: "Times you went off task",
-                              backgroundColor: "hsl(216, 100%, 50%)",
-                              borderColor: "hsl(216, 100%, 50%)",
-                              data: [1, 0, 0, 0, 0, 0, 0],
-                            },
-
-
-                          ],
-                        };
-                      
-                        const configBarChart = {
-                          type: "bar",
-                          data: dataBarChart,
-                          options: {},
-                        };
-                      
-                        var chartBar = new Chart(
-                          document.getElementById("chartBar"),
-                          configBarChart
-                        );
-                      </script>
-                      
+              
                 </div>
               </div>
               <!-- /End replace -->
@@ -184,6 +121,21 @@
         firebase.initializeApp(firebaseConfig);
     </script>
       <script src="../javascript/navbar.js"></script>
+      <script>
+
+function start() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+
+            document.getElementById("ai").innerHTML = xhttp.responseText;
+          }
+        }
+        xhttp.open("GET", "../api/analyze?url=" + document.getElementById("input").value, true);
+        xhttp.send();
+      }
+
+      </script> 
     </body>
 
   </html>
