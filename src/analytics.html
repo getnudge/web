@@ -18,12 +18,12 @@
             <div class="flex justify-between h-16">
               <div class="flex">
                 <div class="flex-shrink-0 flex items-center">
-                    <h1 class="text-2xl">NudgeAI</h1>
+                    <h1 class="text-xl font-bold mr-2"><i class="fas fa-brain"></i> NudgeAI, </h1> <span class="text-xl">the AI powered learning assistant.</span>
                     
                 </div>
                 <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   <!-- Current: "border-blue-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-                  <a  class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm text-xl" aria-current="page"> Article Generation </a>
+                  <a  class="hidden border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm text-xl" aria-current="page"> Article Generation </a>
       
                </div>
               </div>
@@ -34,28 +34,7 @@
       
              
               </div>
-              <div class="-mr-2 flex items-center sm:hidden">
-                <!-- Mobile menu button -->
-                <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
-                  <span class="sr-only">Open main menu</span>
-                  <!--
-                    Heroicon name: outline/menu
-      
-                    Menu open: "hidden", Menu closed: "block"
-                  -->
-                  <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                  <!--
-                    Heroicon name: outline/x
-      
-                    Menu open: "block", Menu closed: "hidden"
-                  -->
-                  <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
+        
             </div>
           </div>
       
@@ -63,36 +42,123 @@
         </nav>
   
       
-        <div class="py-10">
-          <header>
-            <div class="max-w-7xl text-center mx-auto">
-              <h1 class="text-3xl font-bold leading-tight text-gray-900 mb-4">Hello, <span id="username"></span>!</h1>
-  
+        <div class="">
+ 
+          <main>
+
+            <div>
+                       <header>
+            <div class="mx-auto">
+              <div class="text-center bg-gradient-to-r from-cyan-500 to-blue-500 border px-10 py-12 text-4xl font-semibold leading-tight text-gray-100 mb-4">Hello, <span id="username"></span>
+              <br>
+              <button class="hidden text-xl border border-white rounded-lg px-4 py-1 hover:shadow-lg hover:from-cyan-600 gover:to-blue-600 "><i class="fas fa-file-import"></i>  Scan a document</button>
+              </div>
+              
        
             </div>
        
           </header>
-          <main>
-            <div class="mt-10 max-w-7xl  mx-auto sm:px-6 lg:px-8">
-              
-              <div class="">
-                <div class="  rounded-lg h-96">
-                  <div class="mt-1 grid grid-cols-2 gap-4 ">
-                    <div class="py-4  px-2 border border-gray-200   shadow-lg rounded-lg overflow-hidden mx-auto mt-5 text-center w-full">
-                        <h1 class="font-semibold text-2xl mb-5">📥 Input </h1>
-                        <textarea id="input" style="width:100%;height:200px;" class="px-2 py-2 bg-gray-100 border-blue-500 border" ></textarea>
-                        <button  onclick="start()" class="bg-blue-500 text-white px-2 py-2 rounded-lg hover:bg-blue-400">Create Response</button>
-                      </div>
+              <div class="px-10 max-w-7xl mx-auto">
 
-                      <div class="py-4  px-2 border border-gray-200  py-6 shadow-lg rounded-lg overflow-hidden w-full mx-auto mt-5 text-center">
-                        <h1 class="font-semibold text-2xl mb-5">✨ AI Generated Response </h1>
-                        <div class="px-7">
-                      <p id="ai" class="mt-6 italic">Nothing generated yet.</p>
+                <div class="rounded-lg  ">
+                  <div class="hidden rounded-tl-lg rounded-tr-lg sm:rounded-tr-none relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-500">
+               
+                    <div class="">
+                      <h3 class="text-lg font-medium">
+                        <a href="#" class="focus:outline-none">
+                          <!-- Extend touch target to entire panel -->
+                          <span class="absolute inset-0" aria-hidden="true"></span>
+                         Quizlet Generator (Coming Soon)
+                        </a>
+                      </h3>
+                      <p class="mt-2 text-sm text-gray-500">Create quizlets for your notes without all the annoying manual labor. More studying, less typing.</p>
                     </div>
-                      </div>
+                    <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+                      </svg>
+                    </span>
+                  </div>
+                
+
+                  <div id="menu">
+                  <div style="background-image: url('./images/pencil.svg'); background-repeat: cover;" class=" hover:shadow-cyan-900/50 hover:shadow-lg  sm:rounded-tr-lg relative group bg-gray-100 rounded-lg  focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-500">
+                 
+                    <div class="w-1/2 py-7  bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-10 rounded-l-lg">
+                      <h3 class="text-3xl font-bold">
+                        <a onclick="document.getElementById('menu').classList.add('hidden');document.getElementById('article').classList.remove('hidden');" class="focus:outline-none">
+                          <!-- Extend touch target to entire panel -->
+                          <span class="absolute inset-0" aria-hidden="true"></span>
+                          Article Writer
+                        </a>
+                        
+                       
+                      </h3>
+                      <p class="mt-2 text-xl text-gray-100 font-semibold">Feed NudgeAI a prompt and it will write an article for you.
+                      </p>
+
                     </div>
-              
+                    <span class="pointer-events-none absolute top-6 right-6 text-black group-hover:text-gray-800" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+                      </svg>
+                    </span>
+                  </div>
+                
+                  <div style="background-image: url('./images/book.svg'); background-repeat: cover;" class=" mt-5 hover:shadow-cyan-900/50 hover:shadow-lg sm:rounded-tr-lg relative group bg-gray-100 rounded-lg  focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-500">
+                 
+                    <div class="w-1/2 py-7  bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-10 rounded-l-lg">
+                      <h3 class="text-3xl font-bold">
+                        <a href="#" class="focus:outline-none">
+                          <!-- Extend touch target to entire panel -->
+                          <span class="absolute inset-0" aria-hidden="true"></span>
+                          Book Simplifier (coming soon)
+                        </a>
+                        
+                       
+                      </h3>
+                      <p class="mt-2 text-xl text-gray-100 font-semibold">Forget to read Chapter 2 of that one book? We've generate a short summary of it for you.
+                      </p>
+
+                    </div>
+                    
+                    <span class="pointer-events-none absolute top-6 right-6 text-black group-hover:text-gray-800" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
+
+
+<div id="article" class="hidden">
+                  <div class="flex " style="justify-content: space-between;">
+                    <div> 
+                  <h1 class="text-5xl mt-10">Article Writer <span class="text-3xl py-2 font-semibold px-7 bg-red-400 text-white">BETA</span></h1>
+                </div>
+                <div>
+                  <button onclick="window.location.reload();" class="bg-blue-400 hover:bg-blue-500 mt-10 py-2 px-3 text-xl font-semibold text-white" >Return Home</button>
+                  <button onclick="start()"  class="bg-green-400 hover:bg-green-500 mt-10 py-2 px-3 text-xl font-semibold text-white" >    <i id="loader" class="hidden  fas fa-spinner fa-spin"></i>
+                    Generate Article</button>
+                </div>
+                </div>
+                  <h1  class="mt-4 font-semibold text-2xl">Outline 1</h1>
+                  <textarea id="o1" class="mt-2 w-full bg-gray-100 rounded h-40 px-4 py-4 text-xl" placeholder="Enter the outline for your first paragraph here:"></textarea>
+                
+                  <h1  class="mt-4 font-semibold text-2xl">Outline 2</h1>
+                  <textarea id="o2" class="mt-2 w-full bg-gray-100 rounded h-40 px-4 py-4 text-xl" placeholder="Enter the outline for your second paragraph here:"></textarea>
+                
+                  <h1  class="mt-4 font-semibold text-2xl">Outline 3</h1>
+                  <textarea id="o3" class="mt-2 w-full bg-gray-100 rounded h-40 px-4 py-4 text-xl" placeholder="Enter the outline for your third paragraph here:"></textarea>
+                
+                  <h1  class="mt-4 font-semibold text-2xl">Outline 4</h1>
+                  <textarea id="o4" class="mt-2 w-full bg-gray-100 rounded h-40 px-4 py-4 text-xl" placeholder="Enter the outline for your fourth paragraph here:"></textarea>
+                
+                  <br>    <br>    <br>
+                </div>
+
+              </div>
+           
               </div>
               <!-- /End replace -->
             </div>
@@ -124,14 +190,30 @@
       <script>
 
 function start() {
-        var xhttp = new XMLHttpRequest();
+
+      // fetch user gen content
+      let o1 = document.getElementById('o1').value;
+      let o2 = document.getElementById('o2').value;
+      let o3 = document.getElementById('o3').value;
+      let o4 = document.getElementById('o4').value;
+      document.getElementById("loader").classList.remove("hidden");
+      
+      var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState === 4 && this.status === 200) {
 
-            document.getElementById("ai").innerHTML = xhttp.responseText;
+            let response = JSON.parse(this.responseText);
+
+            document.getElementById('o1').value = response.o1;
+            document.getElementById('o2').value = response.o2;
+            document.getElementById('o3').value = response.o3;
+            document.getElementById('o4').value = response.o4;
+            document.getElementById("loader").classList.add("hidden");
+
+           
           }
         }
-        xhttp.open("GET", "../api/analyze?url=" + document.getElementById("input").value, true);
+        xhttp.open("GET", `../api/article?o1=${o1}&o2=${o2}&o3=${o3}&o4=${o4}`, true);
         xhttp.send();
       }
 
