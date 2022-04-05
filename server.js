@@ -29,7 +29,7 @@ app.get('/api/article', async function(req, res){
     const data1 = await openai.createCompletion("text-davinci-002", {
         prompt: `Create a paragraph about the following:\n${req.query.o1}`,
         temperature: 1.0,
-        max_tokens: 100,
+        max_tokens: 600,
         top_p: 1,
         frequency_penalty: 0.8,
         presence_penalty: 0,
